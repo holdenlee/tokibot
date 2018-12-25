@@ -41,7 +41,9 @@ ui = H.component { initialState : initialState', render, eval, receiver }
   render :: State -> H.ComponentHTML Query
   render state =
     HH.div_
-      [ HH.div_ $ map (\x -> HH.p_ [HC.text x]) $ concat $ map dispPair $ reverse state.items,
+      [ HH.div
+        [ HP.prop (HC.PropName "style") "overflow-y:scroll; height:400px;", HP.id_ "scrollbox"] $
+        map (\x -> HH.p_ [HC.text x]) $ concat $ map dispPair $ reverse state.items,
         HH.input
           [ HP.value (state.curText)
           , HE.onValueChange (HE.input UpdateText)],

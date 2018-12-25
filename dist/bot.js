@@ -42421,7 +42421,7 @@ var dispPair = function (v) {
 };
 var ui = function (dictApplicative) {
     var render = function (state) {
-        return Halogen_HTML_Elements.div_([ Halogen_HTML_Elements.div_(Data_Functor.map(Data_Functor.functorArray)(function (x) {
+        return Halogen_HTML_Elements.div_([ Halogen_HTML_Elements.div([ Halogen_HTML_Properties.prop(Halogen_HTML_Core.stringIsProp)("style")("overflow-y:scroll; height:400px;"), Halogen_HTML_Properties.id_("scrollbox") ])(Data_Functor.map(Data_Functor.functorArray)(function (x) {
             return Halogen_HTML_Elements.p_([ Halogen_HTML_Core.text(x) ]);
         })(Data_Array.concat(Data_Functor.map(Data_Functor.functorArray)(dispPair)(Data_Array.reverse(state.items))))), Halogen_HTML_Elements.input([ Halogen_HTML_Properties.value(state.curText), Halogen_HTML_Events.onValueChange(Halogen_HTML_Events.input(UpdateText.create)) ]), Halogen_HTML_Elements.button([ Halogen_HTML_Events.onClick(Halogen_HTML_Events.input_(AddItem.create)) ])([ Halogen_HTML_Core.text("Say!") ]) ]);
     };
@@ -42457,7 +42457,7 @@ var ui = function (dictApplicative) {
                 return Control_Applicative.pure(Halogen_Query_HalogenM.applicativeHalogenM)(q.value1);
             });
         };
-        throw new Error("Failed pattern match at Main line 53, column 12 - line 59, column 16: " + [ q.constructor.name ]);
+        throw new Error("Failed pattern match at Main line 55, column 12 - line 61, column 16: " + [ q.constructor.name ]);
     };
     return Halogen_Component.component(Halogen_HTML_Core.bifunctorHTML)({
         initialState: initialState$prime,
